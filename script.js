@@ -1,16 +1,23 @@
-let input = document.querySelector('input');
 let items = document.querySelectorAll('.item');
+let input = document.querySelector('input');
 
-function addNumber(){
+
+function insert(){
     for(let i = 0; i < items.length; i++){
         items[i].addEventListener('click', function(){
-            input.value += this.innerText;
-            console.log(input.value);
+            if(this.className == 'item clean'){
+                input.value = ''; 
+            } else{
+                input.value += items[i].getAttribute('data-value');
+        }
         });
     }
 }
 
-let backBtn = document.querySelector('.back');
+function clean(){
+    input.value = ' '; 
+}
+
 
 function back(){
     let inputVal = input.value;
@@ -18,6 +25,24 @@ function back(){
     input.value = inputValOut;
 }
 
+function equal(){
+    let exp = input.value;
+    if(exp){
+        input.value = eval(exp);
+    }else{
+        input.value = 0;
+    }
+}
 
-addNumber();
+insert();
+clean();
+
+let backBtn = document.querySelector('.back');
+
 backBtn.addEventListener('click', back);
+
+let equalBtn = document.querySelector('.equal');
+
+equalBtn.addEventListener('click', equal);
+
+

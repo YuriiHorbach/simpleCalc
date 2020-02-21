@@ -1,0 +1,65 @@
+body{
+    background-color: #b5fd8d;
+    user-select: none; /*заборонити виділяти кнопку*/
+}
+
+.container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr; /*кількість колонок*/
+    grid-gap: 4px; /*відстань між колонками*/
+    background: #212121;
+    padding: 4px;
+    border-radius: 5px;
+    min-width: 160px;
+    max-width: 700px;
+    font-family: "Tahoma";
+}
+
+.item, .back, .equal{
+    background-color: rgb(16, 186, 216);
+    color: #000;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+form{
+    min-width: 100%;
+}
+
+input{
+    width: 100%;
+    height: 60px;
+    border: none;
+    font-size: 30px;
+    outline: none;
+    text-align: right;
+}
+
+.input{
+    grid-column: 1/-1;
+    padding: 0;
+}
+
+.clean{
+    grid-column: 1/3;
+    background-color: #0288d1;
+}
+
+.back{
+    grid-column: 3/-1;
+}
+
+.equal{
+    grid-column: 4;
+    grid-row: 6/8;
+    background-color: rgb(177, 175, 175);
+}
+
+.zero{
+    grid-column: 1/3;
+}
